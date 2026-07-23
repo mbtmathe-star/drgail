@@ -229,7 +229,7 @@ button{cursor:pointer}
 .product-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .qty{width:72px;padding:13px;border:1px solid var(--line);background:#fff}
 
-.speaking-hero{--hero-image:url('../assets/dr-gail-stage.jpeg')}
+.speaking-hero{--hero-image:url('/assets/dr-gail-stage.jpeg')}
 .adjective-bar{background:#fff;padding:30px 0;border-bottom:1px solid var(--line)}
 .adjective-bar .container{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;font-family:var(--serif);font-style:italic;font-size:23px;color:var(--purple)}
 .speaking-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
@@ -653,6 +653,8 @@ body.enquiry-modal-open { overflow: hidden; }
   .help-title .heading { font-size: clamp(39px, 11.5vw, 49px); }
   .help-card { min-height: 390px; }
   .help-card-teens { min-height: 450px; }
+  .help-card-teens img { object-position: right center; }
+  .help-card-teens::before { background: linear-gradient(180deg, rgba(19,7,26,.05) 0%, rgba(19,7,26,.55) 55%, rgba(19,7,26,.92) 100%); }
   .help-content { padding: 25px; }
   .help-content h3 { font-size: 37px; line-height: .94; }
   .help-card-workshops .help-content h3, .help-card-teens .help-content h3 { font-size: 34px; }
