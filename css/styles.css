@@ -230,7 +230,7 @@ button{cursor:pointer}
 .product-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .qty{width:72px;padding:13px;border:1px solid var(--line);background:#fff}
 
-.speaking-hero{--hero-image:url('/assets/dr-gail-stage.jpeg')}
+.speaking-hero{--hero-image:url('/assets/dr-gail-speaking-4.jpeg')}
 .adjective-bar{background:#fff;padding:30px 0;border-bottom:1px solid var(--line)}
 .adjective-bar .container{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;font-family:var(--serif);font-style:italic;font-size:23px;color:var(--purple)}
 .speaking-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
@@ -422,7 +422,7 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 
 /* Second homepage feature: photograph fully fills its panel with no empty colour bands. */
 .homepage-feature .event-image{background:none;overflow:hidden}
-.homepage-feature .event-image img{width:100%;height:100%;object-fit:cover;object-position:center center}
+.homepage-feature .event-image img{width:100%;height:100%;object-fit:cover;object-position:center 10%}
 .homepage-feature .event-image::after{background:linear-gradient(90deg,transparent 72%,rgba(223,220,226,.72))}
 
 /* Balance the question and supporting copy as equal editorial columns. */
@@ -688,6 +688,7 @@ body.enquiry-modal-open { overflow: hidden; }
   .about-hero h1 { max-width: 100%; font-size: clamp(45px, 13vw, 55px); line-height: .82; }
   .about-hero::before { background-image: linear-gradient(180deg, rgba(25,8,34,.98) 0%, rgba(25,8,34,.91) 43%, rgba(25,8,34,.32) 72%, rgba(25,8,34,.12) 100%), var(--hero-image); }
   .speaking-hero::before { background-image: linear-gradient(180deg, rgba(25,8,34,.98) 0%, rgba(25,8,34,.9) 43%, rgba(25,8,34,.30) 71%, rgba(25,8,34,.12) 100%), var(--hero-image); }
+  .coaching-hero::before { background-image: linear-gradient(180deg, rgba(25,8,34,.98) 0%, rgba(25,8,34,.9) 43%, rgba(25,8,34,.30) 71%, rgba(25,8,34,.12) 100%), var(--hero-image); background-size: 100% 100%, auto 68%; }
 
   /* Story, programmes, books, speaking and forms. */
   .story-grid { gap: 36px; }

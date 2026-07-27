@@ -23,8 +23,8 @@
       title: 'Mind Power for Teens Academy',
       description: 'Built on the principles of Dr Gail’s book Mind Power for Teens, this online programme empowers young people to develop confidence, resilience, emotional intelligence and a success-oriented mindset. Through engaging lessons and practical activities, teenagers learn how to manage challenges, make positive decisions and unlock their full potential.',
       ideal: 'Teenagers, parents, schools and youth development organisations.',
-      image: 'assets/book-mind-power.jpeg',
-      alt: 'Mind Power 4 Teens Journal',
+      image: 'assets/teens-academy-1.jpeg',
+      alt: 'Teenagers at a Mind Power for Teens Academy event',
       href: 'contact.html?type=teens-academy'
     },
     speakerpreneur: {
@@ -32,7 +32,7 @@
       title: 'Speakerpreneur Academy',
       description: 'Speakerpreneur Academy equips aspiring and established speakers with the knowledge and confidence to build a profitable speaking brand. Learn how to craft compelling presentations, position yourself as an authority, attract speaking opportunities and create multiple income streams from your expertise.',
       ideal: 'Coaches, consultants, entrepreneurs, professionals, academics and aspiring keynote speakers.',
-      image: 'assets/dr-gail-stage.jpeg',
+      image: 'assets/dr-gail-speaking-2.jpeg',
       alt: 'Dr Gail speaking on stage',
       href: 'contact.html?type=speakerpreneur'
     }
