@@ -104,7 +104,7 @@
             <a href="tel:+27629499166">062 949 9166</a>
           </div>
         </div>
-        <form action="submit.php" class="enquiry-modal-form" method="post">
+        <form action="/api/submit" class="enquiry-modal-form" method="post">
           <input aria-hidden="true" autocomplete="off" class="honeypot" name="website" tabindex="-1" type="text">
           <input name="redirect" type="hidden" value="${currentRedirect()}">
           <input name="form_type" type="hidden" value="GGM Coaching website enquiry">
