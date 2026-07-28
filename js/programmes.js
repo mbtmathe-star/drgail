@@ -19,13 +19,13 @@
       href: 'contact.html?type=group-mentorship'
     },
     teens: {
-      tag: 'Self-Paced Online Programme',
-      title: 'Mind Power 4 Teens Academy',
-      description: 'Built on the principles of Dr Gail’s book Mind Power 4 Teens Journal, this online programme empowers young people to develop confidence, resilience, emotional intelligence and a success-oriented mindset. Through engaging lessons and practical activities, teenagers learn how to manage challenges, make positive decisions and unlock their full potential.',
-      ideal: 'Teenagers, parents, schools and youth development organisations.',
-      image: 'assets/teens-academy-1.jpeg',
-      alt: 'Teenagers at a Mind Power 4 Teens Academy event',
-      href: 'contact.html?type=teens-academy'
+      tag: 'Youth Leadership Camp',
+      title: 'Mind Power 4 Teens Camp',
+      description: '<p class="big-intro">Igniting Purpose. Building Confidence. Shaping Future Leaders.</p><p>The Mind Power 4 Teens Camp is a transformational personal development experience designed to equip teenagers with the mindset, confidence and life skills they need to thrive in an ever-changing world. Inspired by the principles in Dr Gail’s book Mind Power 4 Teens Journal, the camp empowers teenagers to develop emotional resilience, self-belief, leadership, effective communication, financial literacy and an entrepreneurial mindset. Participants leave with practical tools to overcome challenges, set meaningful goals and confidently pursue lives of purpose and impact.</p><p>Since its launch, the Mind Power 4 Teens Camp has inspired young people to believe in themselves, embrace their unique potential and take ownership of their future. Participants have reported increased confidence, improved self-esteem, stronger leadership qualities and a renewed sense of purpose after attending the programme.</p><p>Parents and educators have also recognised positive changes in participants’ attitudes, motivation, communication and willingness to pursue personal and academic goals. The camp continues to make a meaningful contribution to developing confident, resilient and purpose-driven young leaders.</p>',
+      ideal: 'Teenagers, parents, schools, NGOs and organisations investing in youth leadership.',
+      image: 'assets/teens-academy-2.jpeg',
+      alt: 'Teenagers at the Mind Power 4 Teens Camp',
+      href: 'contact.html?type=teens-camp'
     },
     speakerpreneur: {
       tag: 'Self-Paced Online Programme',
@@ -62,7 +62,7 @@
     }, 120);
     tag.textContent = item.tag;
     title.textContent = item.title;
-    description.textContent = item.description;
+    description.innerHTML = item.description;
     ideal.innerHTML = `<strong>Ideal for:</strong> ${item.ideal}`;
     link.href = item.href;
     if (updateHash) history.replaceState(null, '', key === 'teens' ? '#teens' : `#${key}`);

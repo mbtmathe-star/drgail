@@ -200,8 +200,6 @@ button{cursor:pointer}
 .reviews-empty,.testimonials-empty{grid-column:1/-1;text-align:center;padding:60px 20px;border:1px dashed var(--line);color:rgba(23,19,26,.55);font-size:15px}
 @media(max-width:1050px){.reviews-grid,.testimonials-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.reviews-grid,.testimonials-grid{grid-template-columns:1fr;gap:20px;margin-top:35px}}
-.teens-camp-gallery{position:sticky;top:110px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.teens-camp-gallery img{width:100%;height:335px;object-fit:cover}
 .story-copy .ideal{font-size:15px;color:var(--purple-deep)}
 
 .expertise{background:var(--lilac)}
@@ -291,7 +289,6 @@ button{cursor:pointer}
   .help-card:nth-child(n){grid-column:span 6}.help-card:nth-child(5){grid-column:span 12}
   .pillars-head{grid-template-columns:1fr}.pillar-grid{grid-template-columns:repeat(2,1fr)}
   .story-image{position:relative;top:auto}.story-image img{height:650px}
-  .teens-camp-gallery{position:relative;top:auto}.teens-camp-gallery img{height:300px}
   .expertise-grid{grid-template-columns:repeat(2,1fr)}.expertise-item:nth-child(2n){border-right:0}.expertise-item:nth-child(4n){border-right:0}
   .program-row,.product-grid,.books-hero-grid{grid-template-columns:1fr}.program-row:nth-child(even) .program-media,.product-section.alt .product-image{order:0}.program-content{padding:55px}.books-hero-art{min-height:600px}
   .cart-layout{grid-template-columns:1fr}.cart-summary{position:static}.footer-grid{grid-template-columns:1fr 1fr}
@@ -307,7 +304,6 @@ button{cursor:pointer}
   .quote-cta{padding:85px 22px}.quote-cta blockquote{font-size:40px}
   .inner-hero{min-height:580px}.inner-hero .container{padding-bottom:55px}.inner-hero h1{font-size:68px}.inner-hero h1 em{margin-left:0}
   .story-grid{gap:45px}.story-image img{height:520px}.story-copy h2{font-size:46px}.expertise-grid{grid-template-columns:1fr}.expertise-item{border-right:0}
-  .teens-camp-gallery{grid-template-columns:1fr 1fr;gap:10px}.teens-camp-gallery img{height:220px}
   .program-row{display:block;margin-bottom:24px}.program-media{min-height:390px}.program-content{padding:38px 28px}.program-content h2{font-size:43px}
   .books-hero{padding-top:135px}.books-hero h1{font-size:54px}.books-hero-art{min-height:430px}.product-section{padding:80px 0}.product-grid{gap:45px}.product-copy h2{font-size:52px}
   .adjective-bar .container{justify-content:center}.topic-list{grid-template-columns:1fr}.form-card{padding:30px 22px}.form-row{grid-template-columns:1fr}.contact-cards{grid-template-columns:1fr}
@@ -387,6 +383,9 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 .programme-stage-copy .tag{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--magenta);font-weight:700}
 .programme-stage-copy h2{font-family:var(--serif);font-size:clamp(46px,5vw,72px);line-height:.9;margin:14px 0 24px;color:var(--purple-deep)}
 .programme-stage-copy .ideal{margin:22px 0 30px;padding:17px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13px}
+#programme-description .big-intro{font-family:var(--serif);font-size:28px;line-height:1.2;color:var(--purple);margin:0 0 18px}
+#programme-description p{margin:0 0 16px}
+#programme-description p:last-child{margin-bottom:0}
 
 /* Book Dr Gail page — strong moving statement and a typographic availability list. */
 .speaking-marquee{background:var(--teal-deep)}
