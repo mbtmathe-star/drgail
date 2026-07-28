@@ -20,11 +20,11 @@
     },
     teens: {
       tag: 'Self-Paced Online Programme',
-      title: 'Mind Power for Teens Academy',
-      description: 'Built on the principles of Dr Gail’s book Mind Power for Teens, this online programme empowers young people to develop confidence, resilience, emotional intelligence and a success-oriented mindset. Through engaging lessons and practical activities, teenagers learn how to manage challenges, make positive decisions and unlock their full potential.',
+      title: 'Mind Power 4 Teens Academy',
+      description: 'Built on the principles of Dr Gail’s book Mind Power 4 Teens Journal, this online programme empowers young people to develop confidence, resilience, emotional intelligence and a success-oriented mindset. Through engaging lessons and practical activities, teenagers learn how to manage challenges, make positive decisions and unlock their full potential.',
       ideal: 'Teenagers, parents, schools and youth development organisations.',
       image: 'assets/teens-academy-1.jpeg',
-      alt: 'Teenagers at a Mind Power for Teens Academy event',
+      alt: 'Teenagers at a Mind Power 4 Teens Academy event',
       href: 'contact.html?type=teens-academy'
     },
     speakerpreneur: {
