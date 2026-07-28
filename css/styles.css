@@ -359,17 +359,6 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
   background-position:center,var(--hero-position,right center);
 }
 
-/* Homepage expertise is now an editorial experience instead of a card grid. */
-.impact-section{padding-bottom:130px}
-.impact-editorial{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px;align-items:stretch;border-top:1px solid rgba(255,255,255,.25)}
-.impact-portrait{min-height:720px;display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(255,255,255,.25);padding:35px}
-.impact-portrait img{width:100%;height:100%;max-height:680px;object-fit:contain;object-position:center}
-.impact-list{list-style:none;margin:0;padding:0}
-.impact-list li{display:grid;grid-template-columns:68px 1fr;align-items:center;gap:18px;padding:22px 10px;border-bottom:1px solid rgba(255,255,255,.22);transition:.25s}
-.impact-list li:hover{padding-left:24px;background:rgba(255,255,255,.07)}
-.impact-list span{font-family:var(--serif);font-style:italic;color:#efbdd1;font-size:20px}
-.impact-list strong{font-family:var(--serif);font-weight:600;font-size:clamp(27px,3vw,43px);line-height:1}
-
 /* Coaching programmes — interactive editorial selector. */
 .programme-showcase{background:var(--cream)}
 .programme-tabs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-bottom:45px}
@@ -398,7 +387,6 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 .submission-banner{position:fixed;left:50%;top:95px;transform:translateX(-50%);z-index:1000;background:var(--purple-deep);color:#fff;padding:15px 22px;box-shadow:var(--shadow);font-size:13px;max-width:min(680px,90vw);text-align:center}
 
 @media(max-width:1050px){
-  .impact-editorial{grid-template-columns:1fr}.impact-portrait{min-height:560px;border-right:0;border-bottom:1px solid rgba(255,255,255,.25)}
   .programme-tabs{grid-template-columns:repeat(2,1fr)}
   .programme-stage{grid-template-columns:1fr}.programme-stage-media{min-height:520px}.programme-stage-copy{padding:55px}
 }
@@ -410,8 +398,6 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
   .inner-hero .container{padding-bottom:250px}
   .inner-hero h1{font-size:58px;line-height:.82}
   .event-image img{height:auto}
-  .impact-portrait{min-height:430px;padding:20px}.impact-portrait img{max-height:390px}
-  .impact-list li{grid-template-columns:48px 1fr;padding:18px 4px}.impact-list strong{font-size:28px}
   .programme-tabs{grid-template-columns:1fr}.programme-tab{min-height:auto;font-size:24px}
   .programme-stage-media{min-height:420px;padding:20px}.programme-stage-copy{padding:38px 26px}
   .speaking-marquee .marquee{font-size:31px}
@@ -459,20 +445,7 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 .help-card-teens::before{background:linear-gradient(90deg,rgba(19,7,26,.88) 0%,rgba(19,7,26,.54) 43%,rgba(19,7,26,.08) 78%)}
 .help-card-teens .help-content{max-width:590px}
 
-/* Expertise: the portrait and the ninth line terminate at exactly the same height. */
 .pillars-head{align-items:center;margin-bottom:54px}
-.expertise-bridge{
-  font-family:var(--serif);font-style:italic;font-size:clamp(30px,3.3vw,48px);line-height:1.02;
-  color:#f1a9c8;margin:0;max-width:570px;
-}
-.impact-editorial{grid-template-columns:.96fr 1.04fr;gap:0;align-items:stretch;border:1px solid rgba(255,255,255,.25)}
-.impact-portrait{min-height:0;padding:0;border-right:1px solid rgba(255,255,255,.25);overflow:hidden}
-.impact-portrait img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:center 24%}
-.impact-list{display:grid;grid-template-rows:repeat(9,1fr);height:100%}
-.impact-list li{grid-template-columns:54px 1fr;gap:12px;padding:13px 18px;min-height:0}
-.impact-list span{font-size:17px}
-.impact-list strong{font-size:clamp(24px,2.25vw,34px);line-height:.98}
-.impact-list li:last-child{border-bottom:0}
 
 /* About hero copy stays clear of Dr Gail’s face. */
 .about-hero::before{background-image:linear-gradient(90deg,rgba(25,8,34,.97) 0%,rgba(25,8,34,.86) 39%,rgba(25,8,34,.16) 70%),var(--hero-image)}
@@ -491,9 +464,6 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 @media(max-width:1050px){
   .homepage-intro .intro-split{grid-template-columns:1fr;gap:38px}
   .homepage-intro .intro-question{max-width:780px}
-  .impact-editorial{grid-template-columns:1fr}
-  .impact-portrait{min-height:660px;border-right:0;border-bottom:1px solid rgba(255,255,255,.25)}
-  .impact-list{display:block}
   .speaking-intro .speaking-grid{grid-template-columns:1fr}
 }
 @media(max-width:700px){
@@ -503,9 +473,6 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
   .homepage-feature .event-image::after{background:linear-gradient(180deg,transparent 72%,rgba(223,220,226,.72))}
   .homepage-intro .intro-question{font-size:50px}
   .help-card-teens{min-height:520px}
-  .impact-portrait{min-height:520px}
-  .impact-list li{grid-template-columns:44px 1fr;padding:16px 10px}
-  .impact-list strong{font-size:26px}
   .about-hero h1{font-size:57px;max-width:92%}
   .about-hero .container{padding-bottom:245px}
   .speaking-intro .heading{font-size:46px}
@@ -676,11 +643,6 @@ body.enquiry-modal-open { overflow: hidden; }
   .logo-strip span { font-size: 9px; line-height: 1.45; letter-spacing: .1em; }
   .pillars::before, .books-hero::before { display: none; }
   .pillars-head { margin-bottom: 38px; }
-  .expertise-bridge { font-size: 28px; line-height: 1.08; }
-  .impact-portrait { min-height: 460px; }
-  .impact-list li { grid-template-columns: 38px 1fr; gap: 9px; padding: 14px 9px; }
-  .impact-list span { font-size: 15px; }
-  .impact-list strong { font-size: 23px; line-height: 1.02; }
   .book-stack { min-height: 400px; }
   .book-stack img { width: 60%; }
   .book-copy .heading { font-size: 44px; }
