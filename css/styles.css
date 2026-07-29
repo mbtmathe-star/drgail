@@ -436,7 +436,7 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 .help-card img{padding:0;width:100%;height:100%;object-fit:cover;background:none;transform:none}
 .help-card:hover img{transform:scale(1.025)}
 .help-card-coaching img{object-position:center 28%}
-.help-card-books img{object-position:center}
+.help-card-books img{object-fit:contain;object-position:center top;padding:30px 30px 130px}
 .help-card-speaking img{object-position:center}
 .help-card-workshops img{object-position:center 42%}
 .help-card-teens{min-height:560px}
