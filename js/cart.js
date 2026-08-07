@@ -1,8 +1,8 @@
 const CART_KEY='ggm-coaching-cart-v2';
 let memoryCart=[];
 const products={
-  rewire:{id:'rewire',title:'Rewire Your Mind in 21 Days',image:'assets/book-rewire.jpeg',price:null},
-  teens:{id:'teens',title:'Mind Power 4 Teens Journal',image:'assets/book-mind-power.jpeg',price:null}
+  rewire:{id:'rewire',title:'Rewire Your Mind in 21 Days',image:'assets/book-rewire.png',price:null},
+  teens:{id:'teens',title:'Mind Power 4 Teens Journal',image:'assets/book-mind-power.png',price:null}
 };
 function getCart(){try{const stored=JSON.parse(localStorage.getItem(CART_KEY))||[];memoryCart=stored;return stored}catch{return memoryCart}}
 function saveCart(cart){memoryCart=cart;try{localStorage.setItem(CART_KEY,JSON.stringify(cart))}catch{}updateCount()}
