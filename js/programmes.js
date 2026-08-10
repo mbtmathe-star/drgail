@@ -35,6 +35,16 @@
       image: 'assets/dr-gail-speaking-2.jpeg',
       alt: 'Dr Gail speaking on stage',
       href: 'contact.html?type=speakerpreneur'
+    },
+    blitz: {
+      tag: 'Focused 1-on-1 Consultation',
+      title: 'Blitz Session',
+      description: 'A fast, focused one-on-one consultation for when you need clarity or a practical action plan without committing to a full coaching programme. Bring your biggest challenge or decision and leave with concrete next steps.',
+      ideal: 'Anyone who needs focused guidance on a specific challenge, decision or goal — fast.',
+      price: 'R400 per hour',
+      image: 'assets/dr-gail-panel.jpeg',
+      alt: 'Dr Gail Motlhaudi-Banda',
+      href: 'contact.html?type=blitz-session'
     }
   };
 
@@ -46,6 +56,7 @@
   const description = document.getElementById('programme-description');
   const ideal = document.getElementById('programme-ideal');
   const link = document.getElementById('programme-link');
+  const price = document.getElementById('programme-price');
 
   function select(key, updateHash = false) {
     const item = data[key] || data['one-on-one'];
@@ -62,6 +73,7 @@
     }, 120);
     tag.textContent = item.tag;
     title.textContent = item.title;
+    if (price) { price.textContent = item.price || ''; price.style.display = item.price ? '' : 'none'; }
     description.innerHTML = item.description;
     ideal.innerHTML = `<strong>Ideal for:</strong> ${item.ideal}`;
     link.href = item.href;

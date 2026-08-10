@@ -258,6 +258,12 @@ button{cursor:pointer}
 .product-copy .price{font-size:12px;letter-spacing:.17em;text-transform:uppercase;color:var(--magenta);font-weight:700;margin:22px 0}
 .product-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .qty{width:72px;padding:13px;border:1px solid var(--line);background:#fff}
+.combo-section{padding:70px 0;background:var(--lilac)}
+.combo-banner{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:40px;margin-bottom:40px;border-bottom:1px solid var(--line)}
+.combo-copy .lead{margin:6px 0 0}
+.delivery-info{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+.delivery-info h3{font-family:var(--serif);font-size:22px;margin:0 0 8px}
+.delivery-info p{margin:0;line-height:1.7}
 
 .speaking-hero{--hero-image:url('/assets/dr-gail-speaking-4.jpeg')}
 .adjective-bar{background:#fff;padding:30px 0;border-bottom:1px solid var(--line)}
@@ -294,6 +300,10 @@ button{cursor:pointer}
 .remove-item{border:0;background:transparent;font-size:24px;color:#8d7b8f}
 .cart-summary{background:var(--lilac);padding:35px;height:max-content;position:sticky;top:120px}
 .cart-summary h2{font-family:var(--serif);font-size:38px;margin-top:0}
+.cart-subtotal{font-size:18px}
+.cart-subtotal span{font-size:12px;color:#6c6570;text-transform:uppercase;letter-spacing:.08em}
+.cart-combo-note{background:#fff;padding:14px 16px;font-size:14px;line-height:1.6}
+.cart-delivery{font-size:13px;line-height:1.8;padding-top:15px;border-top:1px solid var(--line)}
 .empty-cart{text-align:center;padding:80px 20px;font-family:var(--serif);font-size:34px}
 
 .reveal{opacity:1;transform:none}
@@ -323,7 +333,7 @@ button{cursor:pointer}
   .inner-hero{min-height:580px}.inner-hero .container{padding-bottom:55px}.inner-hero h1{font-size:68px}.inner-hero h1 em{margin-left:0}
   .story-grid{gap:45px}.story-image img{height:520px}.story-copy h2{font-size:46px}.expertise-grid{grid-template-columns:1fr}.expertise-item{border-right:0}
   .program-row{display:block;margin-bottom:24px}.program-media{min-height:390px}.program-content{padding:38px 28px}.program-content h2{font-size:43px}
-  .books-hero{padding-top:135px}.books-hero h1{font-size:54px}.books-hero-art{min-height:430px}.product-section{padding:80px 0}.product-grid{gap:45px}.product-copy h2{font-size:52px}
+  .books-hero{padding-top:135px}.books-hero h1{font-size:54px}.books-hero-art{min-height:430px}.product-section{padding:80px 0}.product-grid{gap:45px}.product-copy h2{font-size:52px}.delivery-info{grid-template-columns:1fr;gap:18px}.combo-banner{padding-bottom:30px;margin-bottom:30px}
   .adjective-bar .container{justify-content:center}.topic-list{grid-template-columns:1fr}.form-card{padding:30px 22px}.form-row{grid-template-columns:1fr}.contact-cards{grid-template-columns:1fr}
   .cart-page{padding-top:135px}.cart-item{grid-template-columns:75px 1fr 65px 30px;gap:10px}.cart-item img{width:70px;height:95px}.cart-item h3{font-size:23px}.cart-item input{width:58px}
   .footer-grid{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin:8px 0}

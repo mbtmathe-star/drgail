@@ -76,7 +76,8 @@
     ['speaking', 'Speaking engagement'],
     ['bulk', 'Bulk book order'],
     ['bulk-rewire', 'Bulk order: Rewire Your Mind in 21 Days'],
-    ['bulk-teens', 'School or bulk order: Mind Power 4 Teens Journal']
+    ['bulk-teens', 'School or bulk order: Mind Power 4 Teens Journal'],
+    ['blitz-session', 'Blitz Session enquiry']
   ];
   const labels = Object.fromEntries(typeOptions);
   const aliases = { teens: 'teens-academy' };
