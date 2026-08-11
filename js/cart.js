@@ -6,6 +6,29 @@ const products={
   blitz:{id:'blitz',title:'Blitz Session',image:'assets/dr-gail-panel.jpeg',price:400,unit:'hour'}
 };
 const COMBO_PRICE=260;
+const SNAPSCAN_CODE=''; // set once the real SnapCode is supplied
+function snapscanAmount(cart){
+  let subtotal=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const rewireQty=cart.find(i=>i.id==='rewire')?.qty||0;
+  const teensQty=cart.find(i=>i.id==='teens')?.qty||0;
+  const comboPairs=Math.min(rewireQty,teensQty);
+  if(comboPairs>0){
+    const rawPairPrice=products.rewire.price+products.teens.price;
+    subtotal-=comboPairs*(rawPairPrice-COMBO_PRICE);
+  }
+  return subtotal;
+}
+function populateSnapScan(){
+  const card=document.getElementById('snapscan-pay-card');
+  if(!card)return;
+  const cart=getCart();
+  if(!SNAPSCAN_CODE||!cart.length){card.hidden=true;return}
+  const amount=snapscanAmount(cart);
+  const ref=`GGM-${Date.now().toString(36).toUpperCase()}`;
+  document.getElementById('snapscan-amount').textContent=`R${amount}`;
+  document.getElementById('snapscan-pay-link').href=`https://pos.snapscan.io/qr/${SNAPSCAN_CODE}?id=${encodeURIComponent(ref)}&amount=${amount*100}&strict=true`;
+  card.hidden=false;
+}
 function getCart(){try{const stored=JSON.parse(localStorage.getItem(CART_KEY))||[];memoryCart=stored;return stored}catch{return memoryCart}}
 function saveCart(cart){memoryCart=cart;try{localStorage.setItem(CART_KEY,JSON.stringify(cart))}catch{}updateCount()}
 function updateCount(){const count=getCart().reduce((s,i)=>s+i.qty,0);document.querySelectorAll('.cart-count').forEach(el=>el.textContent=count)}
@@ -27,7 +50,7 @@ summary.innerHTML=`<p><strong>${cart.reduce((s,i)=>s+i.qty,0)}</strong> item(s)<
 }
 function populateCheckout(){const field=document.querySelector('[name="Order summary"]');if(field){const cart=getCart();field.value=cart.map(i=>`${i.qty} × ${i.title}`).join('\n')||'No items in cart';}
 const deliveryFields=document.querySelectorAll('[data-delivery-field]');if(deliveryFields.length){const cart=getCart();const hasPhysical=cart.some(i=>!products[i.id]?.unit);const hide=cart.length>0&&!hasPhysical;deliveryFields.forEach(f=>{f.hidden=hide;});}}
-updateCount();renderCart();populateCheckout();
+updateCount();renderCart();populateCheckout();populateSnapScan();
 window.GGMCart={addToCart,getCart,saveCart};
 
 document.querySelectorAll('[data-buy-now]').forEach(btn => btn.addEventListener('click', () => {
