@@ -57,6 +57,7 @@
   const ideal = document.getElementById('programme-ideal');
   const link = document.getElementById('programme-link');
   const price = document.getElementById('programme-price');
+  const actions = document.getElementById('programme-actions');
 
   function select(key, updateHash = false) {
     const item = data[key] || data['one-on-one'];
@@ -77,6 +78,11 @@
     description.innerHTML = item.description;
     ideal.innerHTML = `<strong>Ideal for:</strong> ${item.ideal}`;
     link.href = item.href;
+    if (actions) {
+      const isBlitz = key === 'blitz';
+      actions.style.display = isBlitz ? '' : 'none';
+      link.style.display = isBlitz ? 'none' : '';
+    }
     if (updateHash) history.replaceState(null, '', key === 'teens' ? '#teens' : `#${key}`);
   }
 

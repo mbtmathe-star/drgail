@@ -42,6 +42,23 @@
   });
 })();
 
+// "Book Dr Gail" hero button: toggle a small dropdown instead of navigating.
+(() => {
+  document.querySelectorAll('[data-book-toggle]').forEach(btn => {
+    const menu = btn.parentElement.querySelector('[data-book-menu]');
+    if (!menu) return;
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const wasHidden = menu.hidden;
+      document.querySelectorAll('[data-book-menu]').forEach(m => { m.hidden = true; });
+      menu.hidden = !wasHidden;
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('[data-book-menu]').forEach(m => { m.hidden = true; });
+  });
+})();
+
 // Preselect the enquiry type when a service or programme link sends a visitor to the contact page.
 (() => {
   const params = new URLSearchParams(window.location.search);
