@@ -8,4 +8,4 @@ Important:
 2. Keep submit.php in the same folder as the HTML files.
 3. The server must support PHP mail(). Some hosts require SMTP configuration before mail() can send.
 4. Forms cannot send while the site is opened directly from a local computer as file://.
-5. The public contact email displayed on the website remains gailym@ymail.com.
+5. The public contact email displayed on the website is info@drgail.co.za.

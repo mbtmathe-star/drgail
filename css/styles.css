@@ -401,6 +401,7 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 .programme-stage-copy h2{font-family:var(--serif);font-size:clamp(46px,5vw,72px);line-height:.9;margin:14px 0 24px;color:var(--purple-deep)}
 .programme-stage-copy .ideal{margin:22px 0 30px;padding:17px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13px}
 #programme-description .big-intro{font-family:var(--serif);font-size:28px;line-height:1.2;color:var(--purple);margin:0 0 18px}
+#programme-description img{width:100%;height:220px;object-fit:cover;border-radius:4px;margin:0 0 18px;display:block}
 #programme-description p{margin:0 0 16px}
 #programme-description p:last-child{margin-bottom:0}
 

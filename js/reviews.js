@@ -2,39 +2,32 @@
   const slider = document.querySelector('[data-reviews-slider]');
   if (!slider) return;
 
-  // Draft placeholder content — replace each entry with verified reader
-  // feedback as it becomes available. No invented names, businesses or
-  // personal details; "label" is a generic role only.
+  // Approved by Dr Gail for publication. Category labels are used in place
+  // of reviewer names until verified names are supplied — no invented names.
   const REVIEWS = [
     {
-      book: 'Mind Power 4 Teens Journal',
       quote: 'Mind Power 4 Teens Journal is a thoughtful and practical resource that encourages teenagers to understand themselves, build confidence and make positive decisions about their future.',
-      label: 'Reader'
+      label: 'Mind Power 4 Teens Journal'
     },
     {
-      book: 'Mind Power 4 Teens Journal',
       quote: 'This journal created meaningful conversations between me and my child. The activities are engaging, relevant and easy for young people to understand.',
-      label: 'Parent'
+      label: 'Parent Review'
     },
     {
-      book: 'Mind Power 4 Teens Journal',
       quote: 'The journal helped me think more clearly about my goals, my strengths and the person I want to become. It made personal growth feel simple and achievable.',
       label: 'Teen Reader'
     },
     {
-      book: 'Mind Power 4 Teens Journal',
       quote: 'Dr Gail has created more than a journal. It is a practical guide that helps young people reflect, grow and develop a stronger mindset.',
-      label: 'Programme Participant'
+      label: 'Personal Development'
     },
     {
-      book: 'Mind Power 4 Teens Journal',
       quote: 'The questions and exercises helped me understand myself better and become more confident about my future. I would recommend it to other teenagers.',
-      label: 'Teen Reader'
+      label: 'Confidence and Purpose'
     },
     {
-      book: 'Mind Power 4 Teens Journal',
       quote: 'A valuable resource for parents, educators and mentors who want to support teenagers in discovering their purpose and developing a positive mindset.',
-      label: 'Educator'
+      label: 'Educational Resource'
     }
   ];
 
@@ -48,7 +41,7 @@
     <article class="review-card" role="group" aria-label="Review">
       <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
       <p>${r.quote}</p>
-      <cite>${r.label} · ${r.book}</cite>
+      <cite>${r.label}</cite>
     </article>
   `).join('');
 

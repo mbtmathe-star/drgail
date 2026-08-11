@@ -102,7 +102,7 @@
           </div>
           <div class="enquiry-modal-details">
             <strong>Direct contact</strong>
-            <a href="mailto:gailym@ymail.com">gailym@ymail.com</a>
+            <a href="mailto:info@drgail.co.za">info@drgail.co.za</a>
             <a href="tel:+27629499166">062 949 9166</a>
           </div>
         </div>
