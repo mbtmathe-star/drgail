@@ -54,7 +54,7 @@ module.exports = async (req, res) => {
     try {
       const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
-        from: 'GGM Coaching Website <no-reply@drgail.co.za>',
+        from: 'GGM Coaching Website <no-reply@email.drgail.co.za>',
         to: process.env.NOTIFY_EMAIL,
         subject: `SnapScan payment received — R${amount}`,
         text: [
