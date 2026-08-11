@@ -26,7 +26,7 @@ const serviceNote=hasService?`<p class="cart-delivery">GGM Coaching will contact
 summary.innerHTML=`<p><strong>${cart.reduce((s,i)=>s+i.qty,0)}</strong> item(s)</p><p class="cart-subtotal">Subtotal: <strong>R${subtotal}</strong>${hasPhysical?' <span>(excludes delivery)</span>':''}</p>${hasCombo?`<p class="cart-combo-note">Buying the Book + Journal together? The combo price is <strong>R${COMBO_PRICE}</strong> (excludes delivery) — GGM Coaching will adjust your total.</p>`:''}${deliveryBlock}${serviceNote}<p class="form-note">Final pricing${hasPhysical?', delivery fee':''} and payment method will be confirmed directly by GGM Coaching before payment.</p>`;
 }
 function populateCheckout(){const field=document.querySelector('[name="Order summary"]');if(field){const cart=getCart();field.value=cart.map(i=>`${i.qty} × ${i.title}`).join('\n')||'No items in cart';}
-const deliveryField=document.querySelector('[data-delivery-field]');if(deliveryField){const cart=getCart();const hasPhysical=cart.some(i=>!products[i.id]?.unit);deliveryField.hidden=cart.length>0&&!hasPhysical;}}
+const deliveryFields=document.querySelectorAll('[data-delivery-field]');if(deliveryFields.length){const cart=getCart();const hasPhysical=cart.some(i=>!products[i.id]?.unit);const hide=cart.length>0&&!hasPhysical;deliveryFields.forEach(f=>{f.hidden=hide;});}}
 updateCount();renderCart();populateCheckout();
 window.GGMCart={addToCart,getCart,saveCart};
 

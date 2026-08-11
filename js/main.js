@@ -127,15 +127,15 @@
           <input aria-hidden="true" autocomplete="off" class="honeypot" name="website" tabindex="-1" type="text">
           <input name="redirect" type="hidden" value="${currentRedirect()}">
           <input name="form_type" type="hidden" value="GGM Coaching website enquiry">
+          <div class="field field-enquiry-type"><label for="modal-enquiry-type">What do you need?</label><select id="modal-enquiry-type" name="Enquiry type">${typeOptions.map(([value,label]) => `<option value="${value}">${label}</option>`).join('')}</select></div>
           <div class="form-row">
             <div class="field"><label for="modal-full-name">Full name</label><input id="modal-full-name" name="Full name" required></div>
             <div class="field"><label for="modal-email">Email</label><input id="modal-email" name="Email" type="email" required></div>
           </div>
           <div class="form-row">
             <div class="field"><label for="modal-phone">Phone</label><input id="modal-phone" name="Phone"></div>
-            <div class="field"><label for="modal-enquiry-type">Enquiry type</label><select id="modal-enquiry-type" name="Enquiry type">${typeOptions.map(([value,label]) => `<option value="${value}">${label}</option>`).join('')}</select></div>
+            <div class="field"><label for="modal-organisation">Organisation, school or company</label><input id="modal-organisation" name="Organisation"></div>
           </div>
-          <div class="field"><label for="modal-organisation">Organisation, school or company</label><input id="modal-organisation" name="Organisation"></div>
           <div class="field"><label for="modal-message">Tell us what you need</label><textarea id="modal-message" name="Message" required></textarea></div>
           <button class="btn btn-primary" type="submit">Submit Enquiry</button>
         </form>

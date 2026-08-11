@@ -567,6 +567,9 @@ body.enquiry-modal-open { overflow: hidden; }
   background: #fff;
 }
 .enquiry-modal-form .field { margin-bottom: 18px; }
+.enquiry-modal-form .field-enquiry-type { margin-bottom: 26px; }
+.enquiry-modal-form .field-enquiry-type label { font-size: 15px; letter-spacing: normal; text-transform: none; color: var(--purple-deep, #250d35); }
+.enquiry-modal-form .field-enquiry-type select { font-size: 20px; font-weight: 700; padding: 18px 20px; border: 2px solid var(--purple, #5b197d); color: var(--purple-deep, #250d35); }
 .enquiry-modal-form .form-row { gap: 16px; }
 .enquiry-modal-form label { display: block; margin-bottom: 8px; font-weight: 700; color: var(--purple, #26052f); }
 .enquiry-modal-form input,
