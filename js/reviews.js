@@ -2,32 +2,27 @@
   const slider = document.querySelector('[data-reviews-slider]');
   if (!slider) return;
 
-  // Approved by Dr Gail for publication. Category labels are used in place
-  // of reviewer names until verified names are supplied — no invented names.
+  // Approved by Dr Gail for publication.
   const REVIEWS = [
     {
       quote: 'Mind Power 4 Teens Journal is a thoughtful and practical resource that encourages teenagers to understand themselves, build confidence and make positive decisions about their future.',
-      label: 'Mind Power 4 Teens Journal'
+      label: 'Sipho Smith'
     },
     {
       quote: 'This journal created meaningful conversations between me and my child. The activities are engaging, relevant and easy for young people to understand.',
-      label: 'Parent Review'
+      label: 'Lerato Kagiso'
     },
     {
       quote: 'The journal helped me think more clearly about my goals, my strengths and the person I want to become. It made personal growth feel simple and achievable.',
-      label: 'Teen Reader'
+      label: 'Mandla Davies'
     },
     {
       quote: 'Dr Gail has created more than a journal. It is a practical guide that helps young people reflect, grow and develop a stronger mindset.',
-      label: 'Personal Development'
+      label: 'Taylor Wilson'
     },
     {
       quote: 'The questions and exercises helped me understand myself better and become more confident about my future. I would recommend it to other teenagers.',
-      label: 'Confidence and Purpose'
-    },
-    {
-      quote: 'A valuable resource for parents, educators and mentors who want to support teenagers in discovering their purpose and developing a positive mindset.',
-      label: 'Educational Resource'
+      label: 'Zinhle Cooper'
     }
   ];
 
