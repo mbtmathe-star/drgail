@@ -51,6 +51,7 @@
   const tabs = [...document.querySelectorAll('.programme-tab')];
   if (!tabs.length) return;
   const image = document.getElementById('programme-image');
+  const media = document.querySelector('.programme-stage-media');
   const tag = document.getElementById('programme-tag');
   const title = document.getElementById('programme-title');
   const description = document.getElementById('programme-description');
@@ -66,6 +67,7 @@
       tab.classList.toggle('active', active);
       tab.setAttribute('aria-selected', String(active));
     });
+    if (media) media.classList.toggle('is-empty', key === 'teens');
     image.style.opacity = '0';
     window.setTimeout(() => {
       image.src = item.image;
