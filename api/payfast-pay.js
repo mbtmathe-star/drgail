@@ -63,14 +63,15 @@ module.exports = async (req, res) => {
     .join('');
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+  res.setHeader('Pragma', 'no-cache');
   res.status(200).end(`<!doctype html>
 <html><head><meta charset="utf-8"><title>Redirecting to PayFast…</title></head>
-<body>
-<p>Redirecting you to PayFast to complete your payment…</p>
+<body onload="document.getElementById('pf').submit()">
+<p>Redirecting you to PayFast to complete your payment… If nothing happens, <button type="submit" form="pf" style="border:0;background:none;color:blue;text-decoration:underline;cursor:pointer;padding:0;font:inherit">click here</button>.</p>
 <form id="pf" action="${processUrl}" method="post">
 ${inputs}
 <input type="hidden" name="signature" value="${escapeHtml(signature)}">
 </form>
-<script>document.getElementById('pf').submit();</script>
 </body></html>`);
 };

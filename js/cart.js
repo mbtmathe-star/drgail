@@ -31,10 +31,11 @@ function populatePayFast(){
 }
 async function checkAuthAndShowPay(){
   const payCard=document.getElementById('payfast-pay-card');
-  const loginCard=document.getElementById('payfast-login-required');
+  const loginCard=document.getElementById('checkout-login-required');
+  const checkoutForm=document.getElementById('checkout-form');
   if(!payCard||!loginCard)return;
   const cart=getCart();
-  if(!cart.length){payCard.hidden=true;loginCard.hidden=true;return}
+  if(!cart.length){payCard.hidden=true;loginCard.hidden=true;if(checkoutForm)checkoutForm.hidden=true;return}
   let data={loggedIn:false};
   try{
     const res=await fetch('/api/auth-status');
@@ -42,12 +43,14 @@ async function checkAuthAndShowPay(){
   }catch(err){/* fail safe: treat as logged out */}
   if(data.loggedIn){
     loginCard.hidden=true;
+    if(checkoutForm)checkoutForm.hidden=false;
     populatePayFast();
     const label=document.getElementById('payfast-signed-in-as');
     if(label){label.hidden=false;label.innerHTML=`Signed in as ${data.email} · <a href="#" data-logout>Sign out</a>`;}
   }else{
     payCard.hidden=true;
     loginCard.hidden=false;
+    if(checkoutForm)checkoutForm.hidden=true;
   }
 }
 document.addEventListener('click',e=>{
