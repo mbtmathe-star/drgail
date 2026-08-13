@@ -34,6 +34,12 @@ module.exports = async (req, res) => {
   const delivery = req.query.delivery ? String(req.query.delivery).slice(0, 255) : '';
   const pepStore = req.query.pep ? String(req.query.pep).slice(0, 255) : '';
   const notes = req.query.notes ? String(req.query.notes).slice(0, 255) : '';
+  const fullName = req.query.name ? String(req.query.name).trim().slice(0, 100) : '';
+  const nameParts = fullName.split(/\s+/).filter(Boolean);
+  const nameFirst = (nameParts[0] || '').slice(0, 100);
+  const nameLast = nameParts.slice(1).join(' ').slice(0, 100);
+  const email = req.query.email ? String(req.query.email).trim().slice(0, 100) : '';
+  const phone = req.query.phone ? String(req.query.phone).trim().slice(0, 30) : '';
 
   const merchantId = process.env.PAYFAST_MERCHANT_ID;
   const merchantKey = process.env.PAYFAST_MERCHANT_KEY;
@@ -51,12 +57,16 @@ module.exports = async (req, res) => {
     return_url: 'https://www.drgail.co.za/checkout.html?payfast=success',
     cancel_url: 'https://www.drgail.co.za/checkout.html?payfast=cancelled',
     notify_url: 'https://www.drgail.co.za/api/payfast-itn',
+    name_first: nameFirst,
+    name_last: nameLast,
+    email_address: email,
     m_payment_id: ref,
     amount: amountNum.toFixed(2),
     item_name: itemName,
     custom_str1: delivery,
     custom_str2: pepStore,
     custom_str3: notes,
+    custom_str4: phone,
   };
 
   const signature = buildSignature(fields, passphrase);

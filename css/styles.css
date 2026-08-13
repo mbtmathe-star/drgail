@@ -184,7 +184,7 @@ button{cursor:pointer}
 .inner-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(25,8,34,.95),rgba(25,8,34,.52),rgba(25,8,34,.12)),var(--hero-image);background-size:cover;background-position:center}
 .inner-hero .container{position:relative;z-index:2;padding-bottom:80px;padding-top:160px}
 .inner-hero h1{font-family:var(--serif);font-size:clamp(68px,9vw,132px);line-height:.75;margin:0;max-width:1000px;letter-spacing:-.05em}
-.inner-hero h1 em{font-family:var(--script);font-weight:400;color:#f1b9ce;display:block;margin-left:8vw}
+.inner-hero h1 em{font-family:var(--script);font-weight:400;color:#f1b9ce;display:inline;margin-left:.15em}
 .inner-hero p{font-size:18px;max-width:620px;margin:30px 0 0}
 
 .story-section{background:#fff}
@@ -335,7 +335,7 @@ button{cursor:pointer}
   .help-grid{display:block}.help-card{min-height:430px;margin-bottom:18px}.help-content{padding:28px}.help-content h3{font-size:40px}
   .pillars-head{gap:20px}.pillar-grid{grid-template-columns:1fr}.pillar{min-height:auto}.book-grid{gap:30px}.book-stack{min-height:480px}
   .quote-cta{padding:85px 22px}.quote-cta blockquote{font-size:40px}
-  .inner-hero{min-height:580px}.inner-hero .container{padding-bottom:55px}.inner-hero h1{font-size:68px}.inner-hero h1 em{margin-left:0}
+  .inner-hero{min-height:580px}.inner-hero .container{padding-bottom:55px}.inner-hero h1{font-size:68px}.inner-hero h1 em{margin-left:.12em}
   .story-grid{gap:45px}.story-image img{height:520px}.story-copy h2{font-size:46px}.expertise-grid{grid-template-columns:1fr}.expertise-item{border-right:0}
   .program-row{display:block;margin-bottom:24px}.program-media{min-height:390px}.program-content{padding:38px 28px}.program-content h2{font-size:43px}
   .books-hero{padding-top:135px}.books-hero h1{font-size:54px}.books-hero-art{min-height:430px}.product-section{padding:80px 0}.product-grid{gap:45px}.product-copy h2{font-size:52px}.delivery-info{grid-template-columns:1fr;gap:18px}.combo-banner{padding-bottom:30px;margin-bottom:30px}
@@ -695,7 +695,7 @@ body.enquiry-modal-open { overflow: hidden; }
   }
   .inner-hero .container { width: calc(100% - 32px); padding-top: 132px; padding-bottom: 255px; }
   .inner-hero h1 { max-width: 100%; font-size: clamp(47px, 13.5vw, 57px); line-height: .82; letter-spacing: -.035em; overflow-wrap: anywhere; }
-  .inner-hero h1 em { margin-left: 0; font-size: .96em; line-height: .86; }
+  .inner-hero h1 em { margin-left: .12em; font-size: .96em; line-height: .86; }
   .inner-hero p { max-width: 100%; margin-top: 23px; font-size: 15.5px; line-height: 1.65; }
   .about-hero .container { padding-left: 0; padding-bottom: 255px; }
   .about-hero h1 { max-width: 100%; font-size: clamp(45px, 13vw, 55px); line-height: .82; }

@@ -23,6 +23,12 @@ function payfastHref(){
   const ref=`GGM-${Date.now().toString(36).toUpperCase()}`;
   const itemName=cart.map(i=>i.title).join(', ').slice(0,100);
   let url=`/api/payfast-pay?amount=${amount}&ref=${encodeURIComponent(ref)}&item=${encodeURIComponent(itemName)}`;
+  const nameField=document.getElementById('checkout-name');
+  const emailField=document.getElementById('checkout-email');
+  const phoneField=document.getElementById('checkout-phone');
+  if(nameField&&nameField.value.trim())url+=`&name=${encodeURIComponent(nameField.value.trim())}`;
+  if(emailField&&emailField.value.trim())url+=`&email=${encodeURIComponent(emailField.value.trim())}`;
+  if(phoneField&&phoneField.value.trim())url+=`&phone=${encodeURIComponent(phoneField.value.trim())}`;
   const deliveryPref=document.getElementById('delivery-preference');
   const pepStore=document.getElementById('pep-store');
   const notes=document.getElementById('delivery-notes');
@@ -42,8 +48,12 @@ function populatePayFast(){
   const amount=cartAmount(cart);
   document.getElementById('payfast-amount').textContent=`R${amount}`;
   const link=document.getElementById('payfast-pay-link');
+  const form=document.getElementById('checkout-form');
   link.href=payfastHref();
-  link.onclick=()=>{link.href=payfastHref();};
+  link.onclick=(e)=>{
+    if(form&&!form.reportValidity()){e.preventDefault();return}
+    link.href=payfastHref();
+  };
   card.hidden=false;
 }
 async function checkAuthAndShowPay(){
