@@ -31,6 +31,9 @@ module.exports = async (req, res) => {
   }
   const itemName = String(req.query.item || 'GGM Coaching order').slice(0, 100);
   const ref = String(req.query.ref || `GGM-${Date.now()}`).slice(0, 100);
+  const delivery = req.query.delivery ? String(req.query.delivery).slice(0, 255) : '';
+  const pepStore = req.query.pep ? String(req.query.pep).slice(0, 255) : '';
+  const notes = req.query.notes ? String(req.query.notes).slice(0, 255) : '';
 
   const merchantId = process.env.PAYFAST_MERCHANT_ID;
   const merchantKey = process.env.PAYFAST_MERCHANT_KEY;
@@ -51,6 +54,9 @@ module.exports = async (req, res) => {
     m_payment_id: ref,
     amount: amountNum.toFixed(2),
     item_name: itemName,
+    custom_str1: delivery,
+    custom_str2: pepStore,
+    custom_str3: notes,
   };
 
   const signature = buildSignature(fields, passphrase);

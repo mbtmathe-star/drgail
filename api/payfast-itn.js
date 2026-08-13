@@ -63,6 +63,9 @@ module.exports = async (req, res) => {
           `PayFast payment ID: ${received.pf_payment_id || '(unknown)'}`,
           `Name: ${[received.name_first, received.name_last].filter(Boolean).join(' ') || '(not provided)'}`,
           `Email: ${received.email_address || '(not provided)'}`,
+          `Delivery preference: ${received.custom_str1 || '(not applicable)'}`,
+          `Nearest PEP Store: ${received.custom_str2 || '(not provided)'}`,
+          `Delivery/notes: ${received.custom_str3 || '(not provided)'}`,
         ].join('\n'),
       });
     } catch (err) {

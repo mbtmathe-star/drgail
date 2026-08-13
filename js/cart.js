@@ -17,16 +17,33 @@ function cartAmount(cart){
   }
   return subtotal;
 }
+function payfastHref(){
+  const cart=getCart();
+  const amount=cartAmount(cart);
+  const ref=`GGM-${Date.now().toString(36).toUpperCase()}`;
+  const itemName=cart.map(i=>i.title).join(', ').slice(0,100);
+  let url=`/api/payfast-pay?amount=${amount}&ref=${encodeURIComponent(ref)}&item=${encodeURIComponent(itemName)}`;
+  const deliveryPref=document.getElementById('delivery-preference');
+  const pepStore=document.getElementById('pep-store');
+  const notes=document.getElementById('delivery-notes');
+  const deliveryVisible=deliveryPref&&!deliveryPref.closest('[data-delivery-field]')?.hidden;
+  if(deliveryVisible){
+    url+=`&delivery=${encodeURIComponent(deliveryPref.value)}`;
+    if(pepStore&&pepStore.value.trim())url+=`&pep=${encodeURIComponent(pepStore.value.trim())}`;
+  }
+  if(notes&&notes.value.trim())url+=`&notes=${encodeURIComponent(notes.value.trim())}`;
+  return url;
+}
 function populatePayFast(){
   const card=document.getElementById('payfast-pay-card');
   if(!card)return;
   const cart=getCart();
   if(!cart.length){card.hidden=true;return}
   const amount=cartAmount(cart);
-  const ref=`GGM-${Date.now().toString(36).toUpperCase()}`;
-  const itemName=cart.map(i=>i.title).join(', ').slice(0,100);
   document.getElementById('payfast-amount').textContent=`R${amount}`;
-  document.getElementById('payfast-pay-link').href=`/api/payfast-pay?amount=${amount}&ref=${encodeURIComponent(ref)}&item=${encodeURIComponent(itemName)}`;
+  const link=document.getElementById('payfast-pay-link');
+  link.href=payfastHref();
+  link.onclick=()=>{link.href=payfastHref();};
   card.hidden=false;
 }
 async function checkAuthAndShowPay(){
@@ -73,9 +90,9 @@ const hasPhysical=cart.some(i=>!products[i.id]?.unit);
 const hasService=cart.some(i=>products[i.id]?.unit);
 const deliveryBlock=hasPhysical?`<div class="cart-delivery"><strong>📦 Delivery (via PAXI):</strong><br>R59.95 (7–9 business days)<br>R109.95 (3–5 business days)<br><strong>🚚 Kimberley, Northern Cape:</strong> Free collection or R170 local delivery</div>`:'';
 const serviceNote=hasService?`<p class="cart-delivery">GGM Coaching will contact you to schedule your Blitz Session once payment is arranged.</p>`:'';
-summary.innerHTML=`<p><strong>${cart.reduce((s,i)=>s+i.qty,0)}</strong> item(s)</p><p class="cart-subtotal">Subtotal: <strong>R${subtotal}</strong>${hasPhysical?' <span>(excludes delivery)</span>':''}</p>${hasCombo?`<p class="cart-combo-note">Buying the Book + Journal together? The combo price is <strong>R${COMBO_PRICE}</strong> (excludes delivery) — GGM Coaching will adjust your total.</p>`:''}${deliveryBlock}${serviceNote}<p class="form-note">Final pricing${hasPhysical?', delivery fee':''} and payment method will be confirmed directly by GGM Coaching before payment.</p>`;
+summary.innerHTML=`<p><strong>${cart.reduce((s,i)=>s+i.qty,0)}</strong> item(s)</p><p class="cart-subtotal">Subtotal: <strong>R${subtotal}</strong>${hasPhysical?' <span>(excludes delivery)</span>':''}</p>${hasCombo?`<p class="cart-combo-note">Buying the Book + Journal together? The combo price is <strong>R${COMBO_PRICE}</strong> (excludes delivery) — GGM Coaching will adjust your total.</p>`:''}${deliveryBlock}${serviceNote}<p class="form-note">Sign in at checkout to pay securely via PayFast.</p>`;
 }
-function populateCheckout(){const field=document.querySelector('[name="Order summary"]');if(field){const cart=getCart();field.value=cart.map(i=>`${i.qty} × ${i.title}`).join('\n')||'No items in cart';}
+function populateCheckout(){const field=document.getElementById('order-summary-display');if(field){const cart=getCart();field.value=cart.map(i=>`${i.qty} × ${i.title}`).join('\n')||'No items in cart';}
 const deliveryFields=document.querySelectorAll('[data-delivery-field]');if(deliveryFields.length){const cart=getCart();const hasPhysical=cart.some(i=>!products[i.id]?.unit);const hide=cart.length>0&&!hasPhysical;deliveryFields.forEach(f=>{f.hidden=hide;});}}
 updateCount();renderCart();populateCheckout();checkAuthAndShowPay();
 window.GGMCart={addToCart,getCart,saveCart};
