@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Sign In | GGM Coaching</title><link href="css/styles.css" rel="stylesheet"/></head><body><div id="header"></div><main class="cart-page" id="main"><div class="container" style="max-width:520px"><div class="eyebrow">Sign In</div><h1 class="heading">Sign in to continue to checkout.</h1><p class="lead">Enter your email and we'll send you a one-time sign-in link — no password needed.</p><form class="form-card" id="login-form"><div class="field"><label for="login-email">Email</label><input id="login-email" name="Email" required="" type="email"/></div><button class="btn btn-primary" type="submit">Send Sign-In Link</button><p class="form-note" id="login-message"></p></form></div></main><div id="footer"></div><script src="js/shared.js"></script><script>document.getElementById('header').innerHTML=header('');document.getElementById('footer').innerHTML=footer();</script><script src="js/main.js"></script>
+<script>
+(() => {
+  const form = document.getElementById('login-form');
+  const msg = document.getElementById('login-message');
+  const params = new URLSearchParams(location.search);
+  const errorParam = params.get('error');
+  if (errorParam === 'expired') msg.textContent = 'That sign-in link has expired. Please request a new one below.';
+  if (errorParam === 'missing_token') msg.textContent = 'That sign-in link was invalid. Please request a new one below.';
+  const redirect = params.get('redirect') === 'cart.html' ? 'cart.html' : 'checkout.html';
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value.trim();
+    const btn = form.querySelector('button');
+    btn.disabled = true;
+    msg.textContent = 'Sending…';
+    try {
+      const res = await fetch('/api/auth-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, redirect }),
+      });
+      const data = await res.json();
+      msg.textContent = data.message || data.error || 'Something went wrong. Please try again.';
+    } catch (err) {
+      msg.textContent = 'Something went wrong. Please try again.';
+    }
+    btn.disabled = false;
+  });
+})();
+</script>
+</body></html>

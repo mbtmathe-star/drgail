@@ -29,6 +29,33 @@ function populatePayFast(){
   document.getElementById('payfast-pay-link').href=`/api/payfast-pay?amount=${amount}&ref=${encodeURIComponent(ref)}&item=${encodeURIComponent(itemName)}`;
   card.hidden=false;
 }
+async function checkAuthAndShowPay(){
+  const payCard=document.getElementById('payfast-pay-card');
+  const loginCard=document.getElementById('payfast-login-required');
+  if(!payCard||!loginCard)return;
+  const cart=getCart();
+  if(!cart.length){payCard.hidden=true;loginCard.hidden=true;return}
+  let data={loggedIn:false};
+  try{
+    const res=await fetch('/api/auth-status');
+    data=await res.json();
+  }catch(err){/* fail safe: treat as logged out */}
+  if(data.loggedIn){
+    loginCard.hidden=true;
+    populatePayFast();
+    const label=document.getElementById('payfast-signed-in-as');
+    if(label){label.hidden=false;label.innerHTML=`Signed in as ${data.email} · <a href="#" data-logout>Sign out</a>`;}
+  }else{
+    payCard.hidden=true;
+    loginCard.hidden=false;
+  }
+}
+document.addEventListener('click',e=>{
+  const link=e.target.closest('[data-logout]');
+  if(!link)return;
+  e.preventDefault();
+  fetch('/api/auth-logout',{method:'POST'}).finally(()=>checkAuthAndShowPay());
+});
 function getCart(){try{const stored=JSON.parse(localStorage.getItem(CART_KEY))||[];memoryCart=stored;return stored}catch{return memoryCart}}
 function saveCart(cart){memoryCart=cart;try{localStorage.setItem(CART_KEY,JSON.stringify(cart))}catch{}updateCount()}
 function updateCount(){const count=getCart().reduce((s,i)=>s+i.qty,0);document.querySelectorAll('.cart-count').forEach(el=>el.textContent=count)}
@@ -50,7 +77,7 @@ summary.innerHTML=`<p><strong>${cart.reduce((s,i)=>s+i.qty,0)}</strong> item(s)<
 }
 function populateCheckout(){const field=document.querySelector('[name="Order summary"]');if(field){const cart=getCart();field.value=cart.map(i=>`${i.qty} × ${i.title}`).join('\n')||'No items in cart';}
 const deliveryFields=document.querySelectorAll('[data-delivery-field]');if(deliveryFields.length){const cart=getCart();const hasPhysical=cart.some(i=>!products[i.id]?.unit);const hide=cart.length>0&&!hasPhysical;deliveryFields.forEach(f=>{f.hidden=hide;});}}
-updateCount();renderCart();populateCheckout();populatePayFast();
+updateCount();renderCart();populateCheckout();checkAuthAndShowPay();
 window.GGMCart={addToCart,getCart,saveCart};
 
 document.querySelectorAll('[data-buy-now]').forEach(btn => btn.addEventListener('click', () => {
