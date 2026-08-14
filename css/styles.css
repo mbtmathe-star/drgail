@@ -496,6 +496,7 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 .about-hero .container{padding-left:0}
 .about-hero h1{max-width:540px;font-size:clamp(56px,6vw,86px);line-height:.8}
 .about-hero h1 em{margin-left:2vw}
+.about-hero h1 .hero-signoff{display:block;margin-left:0;margin-top:.05em;font-size:1.9em}
 .about-hero p{max-width:520px}
 .about-signature{color:#f1b9ce}
 
