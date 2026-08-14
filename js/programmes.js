@@ -12,25 +12,25 @@
     'group-mentorship': {
       tag: 'Community, Coaching and Accountability',
       title: 'Exclusive Group Mentorship Programme',
-      description: 'This exclusive mentorship programme provides a supportive community where members receive monthly coaching, practical business and mindset training, accountability and shared learning experiences. Together, members explore entrepreneurship, leadership, purpose, confidence, resilience and sustainable success while building meaningful connections with fellow growth-minded individuals.',
+      description: 'Growth is accelerated when you learn alongside like-minded people. This exclusive mentorship programme provides a supportive community where members receive monthly coaching, practical business and mindset training, accountability and shared learning experiences. Together, members explore entrepreneurship, leadership, purpose, confidence, resilience and sustainable success while building meaningful connections with fellow growth-minded individuals.',
       ideal: 'Entrepreneurs, professionals and emerging leaders who value learning within a community.',
       image: 'assets/dr-gail-colourful.jpeg',
       alt: 'Dr Gail Motlhaudi-Banda',
       href: 'contact.html?type=group-mentorship'
     },
     teens: {
-      tag: 'Youth Leadership Camp',
-      title: 'Mind Power 4 Teens Camp',
-      description: '<p class="big-intro">Igniting Purpose. Building Confidence. Shaping Future Leaders.</p><img src="assets/teens-academy-1.jpeg" alt="Teenagers participating in the Mind Power 4 Teens Camp"/><p>The Mind Power 4 Teens Camp is a transformational personal development experience designed to equip teenagers with the mindset, confidence and life skills they need to thrive in an ever-changing world. Inspired by the principles in Dr Gail’s book Mind Power 4 Teens Journal, the camp empowers teenagers to develop emotional resilience, self-belief, leadership, effective communication, financial literacy and an entrepreneurial mindset. Participants leave with practical tools to overcome challenges, set meaningful goals and confidently pursue lives of purpose and impact.</p><p>Since its launch, the Mind Power 4 Teens Camp has inspired young people to believe in themselves, embrace their unique potential and take ownership of their future. Participants have reported increased confidence, improved self-esteem, stronger leadership qualities and a renewed sense of purpose after attending the programme.</p><p>Parents and educators have also recognised positive changes in participants’ attitudes, motivation, communication and willingness to pursue personal and academic goals. The camp continues to make a meaningful contribution to developing confident, resilient and purpose-driven young leaders.</p>',
-      ideal: 'Teenagers, parents, schools, NGOs and organisations investing in youth leadership.',
+      tag: 'Self-Paced Online Programme',
+      title: 'Mind Power 4 Teens Academy',
+      description: '<p class="big-intro">Igniting Purpose. Building Confidence. Shaping Future Leaders.</p><img src="assets/teens-academy-1.jpeg" alt="Teenagers participating in the Mind Power 4 Teens Academy"/><p>Built on the principles of Dr Gail’s bestselling book Mind Power 4 Teens Journal, this online programme empowers young people to develop confidence, resilience, emotional intelligence and a success-oriented mindset.</p><p>Through engaging lessons and practical activities, teenagers learn how to manage challenges, make positive decisions and unlock their full potential.</p>',
+      ideal: 'Teenagers, parents, schools and youth development organisations.',
       image: 'assets/teens-academy-2.jpeg',
-      alt: 'Teenagers at the Mind Power 4 Teens Camp',
-      href: 'contact.html?type=teens-camp'
+      alt: 'Teenagers at the Mind Power 4 Teens Academy',
+      href: 'contact.html?type=teens-academy'
     },
     speakerpreneur: {
       tag: 'Self-Paced Online Programme',
       title: 'Speakerpreneur Academy',
-      description: 'Speakerpreneur Academy equips aspiring and established speakers with the knowledge and confidence to build a profitable speaking brand. Learn how to craft compelling presentations, position yourself as an authority, attract speaking opportunities and create multiple income streams from your expertise.',
+      description: 'Your voice is one of your greatest assets. Speakerpreneur Academy equips aspiring and established speakers with the knowledge and confidence to build a profitable speaking brand. Learn how to craft compelling presentations, position yourself as an authority, attract speaking opportunities and create multiple income streams from your expertise. Whether you dream of speaking on local stages or internationally, this programme provides practical tools to help you turn your message into meaningful impact and income.',
       ideal: 'Coaches, consultants, entrepreneurs, professionals, academics and aspiring keynote speakers.',
       image: 'assets/dr-gail-speaking-2.jpeg',
       alt: 'Dr Gail speaking on stage',
