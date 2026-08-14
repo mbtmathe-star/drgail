@@ -494,7 +494,7 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 /* About hero copy stays clear of Dr Gail’s face. */
 .about-hero::before{background-image:linear-gradient(90deg,rgba(25,8,34,.97) 0,rgba(25,8,34,.93) 680px,rgba(25,8,34,.35) 880px,rgba(25,8,34,.16) 1100px),var(--hero-image)}
 .about-hero .container{padding-left:0}
-.about-hero h1{max-width:590px;font-size:clamp(62px,7vw,104px);line-height:.78}
+.about-hero h1{max-width:660px;font-size:clamp(62px,7vw,104px);line-height:.78}
 .about-hero h1 em{margin-left:2vw}
 .about-hero p{max-width:520px}
 .about-signature{color:#f1b9ce}
