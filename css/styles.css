@@ -404,11 +404,12 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 .programme-stage{display:grid;grid-template-columns:.9fr 1.1fr;min-height:650px;background:#fff;border:1px solid var(--line)}
 .programme-stage-media{display:flex;align-items:center;justify-content:center;min-height:650px;background:var(--lilac);padding:35px;overflow:hidden}
 .programme-stage-media img{width:100%;height:100%;max-height:590px;transition:opacity .2s ease}
-.programme-stage-media.is-empty{background:#fff}
-.programme-stage-media.is-empty img{display:none}
+.programme-stage-media.is-empty{display:none}
+.programme-stage:has(.programme-stage-media.is-empty) .programme-stage-copy{grid-column:1/-1}
 .programme-stage-copy{padding:70px;display:flex;flex-direction:column;justify-content:center}
 .programme-stage-copy .tag{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--magenta);font-weight:700}
 .programme-stage-copy h2{font-family:var(--serif);font-size:clamp(46px,5vw,72px);line-height:.9;margin:14px 0 24px;color:var(--purple-deep)}
+.programme-stage-copy .price{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta);font-weight:700;margin:-10px 0 22px}
 .programme-stage-copy .ideal{margin:22px 0 30px;padding:17px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13px}
 #programme-description .big-intro{font-family:var(--serif);font-size:28px;line-height:1.2;color:var(--purple);margin:0 0 18px}
 #programme-description img{width:100%;height:220px;object-fit:cover;border-radius:4px;margin:0 0 18px;display:block}

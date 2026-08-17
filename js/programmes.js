@@ -5,6 +5,7 @@
       title: 'Premium One-on-One Coaching',
       description: 'Our most personalised coaching experience, tailored for entrepreneurs, professionals, academics and aspiring leaders who are ready to achieve their next level of success. Through confidential one-on-one coaching with Dr Gail, you’ll gain clarity, overcome limiting beliefs, strengthen your leadership and develop a practical action plan aligned with your personal and professional goals.',
       ideal: 'Entrepreneurs, executives, professionals, academics and individuals seeking focused personal growth.',
+      price: 'R1200 per month',
       image: 'assets/dr-gail-blue-shirt.jpeg',
       alt: 'Dr Gail Motlhaudi-Banda',
       href: 'contact.html?type=one-on-one'
@@ -14,6 +15,7 @@
       title: 'Exclusive Group Mentorship Programme',
       description: 'Growth is accelerated when you learn alongside like-minded people. This exclusive mentorship programme provides a supportive community where members receive monthly coaching, practical business and mindset training, accountability and shared learning experiences. Together, members explore entrepreneurship, leadership, purpose, confidence, resilience and sustainable success while building meaningful connections with fellow growth-minded individuals.',
       ideal: 'Entrepreneurs, professionals and emerging leaders who value learning within a community.',
+      price: 'R550 per month',
       image: 'assets/dr-gail-colourful.jpeg',
       alt: 'Dr Gail Motlhaudi-Banda',
       href: 'contact.html?type=group-mentorship'
@@ -23,6 +25,7 @@
       title: 'Mind Power 4 Teens Academy',
       description: '<p class="big-intro">Igniting Purpose. Building Confidence. Shaping Future Leaders.</p><img src="assets/teens-academy-1.jpeg" alt="Teenagers participating in the Mind Power 4 Teens Academy"/><p>Built on the principles of Dr Gail’s bestselling book Mind Power 4 Teens Journal, this online programme empowers young people to develop confidence, resilience, emotional intelligence and a success-oriented mindset.</p><p>Through engaging lessons and practical activities, teenagers learn how to manage challenges, make positive decisions and unlock their full potential.</p>',
       ideal: 'Teenagers, parents, schools and youth development organisations.',
+      price: 'From R650',
       image: 'assets/teens-academy-2.jpeg',
       alt: 'Teenagers at the Mind Power 4 Teens Academy',
       href: 'contact.html?type=teens-academy'
@@ -32,6 +35,7 @@
       title: 'Speakerpreneur Academy',
       description: 'Your voice is one of your greatest assets. Speakerpreneur Academy equips aspiring and established speakers with the knowledge and confidence to build a profitable speaking brand. Learn how to craft compelling presentations, position yourself as an authority, attract speaking opportunities and create multiple income streams from your expertise. Whether you dream of speaking on local stages or internationally, this programme provides practical tools to help you turn your message into meaningful impact and income.',
       ideal: 'Coaches, consultants, entrepreneurs, professionals, academics and aspiring keynote speakers.',
+      price: 'From R2299 (automated programme)',
       image: 'assets/dr-gail-speaking-2.jpeg',
       alt: 'Dr Gail speaking on stage',
       href: 'contact.html?type=speakerpreneur'
@@ -50,6 +54,9 @@
 
   const tabs = [...document.querySelectorAll('.programme-tab')];
   if (!tabs.length) return;
+  const stage = document.querySelector('.programme-stage');
+  const tabsContainer = document.querySelector('.programme-tabs');
+  const mobileQuery = window.matchMedia('(max-width: 700px)');
   const image = document.getElementById('programme-image');
   const media = document.querySelector('.programme-stage-media');
   const tag = document.getElementById('programme-tag');
@@ -61,12 +68,19 @@
   const actions = document.getElementById('programme-actions');
 
   function select(key, updateHash = false) {
+    currentKey = key;
     const item = data[key] || data['one-on-one'];
+    let activeTab = tabs[0];
     tabs.forEach(tab => {
       const active = tab.dataset.programme === key;
+      if (active) activeTab = tab;
       tab.classList.toggle('active', active);
       tab.setAttribute('aria-selected', String(active));
     });
+    if (stage) {
+      if (mobileQuery.matches) activeTab.insertAdjacentElement('afterend', stage);
+      else if (tabsContainer) tabsContainer.insertAdjacentElement('afterend', stage);
+    }
     if (media) media.classList.toggle('is-empty', key === 'teens');
     image.style.opacity = '0';
     window.setTimeout(() => {
@@ -88,7 +102,9 @@
     if (updateHash) history.replaceState(null, '', key === 'teens' ? '#teens' : `#${key}`);
   }
 
+  let currentKey = 'one-on-one';
   tabs.forEach(tab => tab.addEventListener('click', () => select(tab.dataset.programme, true)));
+  mobileQuery.addEventListener('change', () => select(currentKey));
   const requested = location.hash.replace('#', '');
   select(data[requested] ? requested : 'one-on-one');
 })();
