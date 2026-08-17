@@ -457,7 +457,7 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 .homepage-intro .intro-question em{
   font-family:var(--serif);font-style:italic;font-weight:500;color:#f1a9c8;
 }
-.event-copy .homepage-accent-word{font-size:72px;line-height:.78;letter-spacing:-.035em}
+.event-copy .homepage-accent-word{font-size:110px;line-height:.78;letter-spacing:-.035em}
 .homepage-intro .intro-question em{font-size:1em}
 
 /* Second homepage feature: photograph fully fills its panel with no empty colour bands. */
@@ -509,7 +509,7 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 }
 @media(max-width:700px){
   .brand-mark{width:46px;height:46px}.brand-mark img{width:46px;height:46px}
-  .event-copy .homepage-accent-word{font-size:58px}
+  .event-copy .homepage-accent-word{font-size:88px}
   .homepage-feature .event-image img{object-position:45% center}
   .homepage-feature .event-image::after{background:linear-gradient(180deg,transparent 72%,rgba(223,220,226,.72))}
   .homepage-intro .intro-question{font-size:50px}
@@ -665,7 +665,7 @@ body.enquiry-modal-open { overflow: hidden; }
   /* Homepage sections. */
   .event-image { min-height: 335px; }
   .event-copy { padding: 46px 24px 52px; }
-  .event-copy .homepage-accent-word { font-size: 46px; line-height: .85; }
+  .event-copy .homepage-accent-word { font-size: 70px; line-height: .85; }
   .event-copy h2 { font-size: 44px; line-height: .92; }
   .event-copy p { font-size: 15px; }
   .event-meta { margin: 17px 0 24px; padding: 13px 0; font-size: 9px; }
