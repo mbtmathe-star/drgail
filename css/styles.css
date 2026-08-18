@@ -108,7 +108,7 @@ button{cursor:pointer}
 .event-image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,rgba(223,220,226,.9))}
 .event-copy{display:flex;flex-direction:column;justify-content:center;padding:80px 8vw 80px 6vw;position:relative}
 .event-copy .script-word{font-family:var(--script);font-size:80px;color:var(--magenta);line-height:.7;margin-bottom:18px}
-.event-copy h2{font-family:var(--serif);font-size:64px;line-height:.9;margin:0 0 24px}
+.event-copy h2{font-family:var(--serif);font-size:78px;line-height:.9;margin:0 0 24px}
 .event-meta{display:flex;gap:25px;border-top:1px solid rgba(0,0,0,.2);border-bottom:1px solid rgba(0,0,0,.2);padding:15px 0;margin:20px 0 28px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
 
 .intro-split{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}
@@ -457,7 +457,7 @@ html:not(.motion-ready) .reveal{opacity:1!important;transform:none!important}
 .homepage-intro .intro-question em{
   font-family:var(--serif);font-style:italic;font-weight:500;color:#f1a9c8;
 }
-.event-copy .homepage-accent-word{font-size:110px;line-height:.78;letter-spacing:-.035em}
+.event-copy .homepage-accent-word{font-size:170px;line-height:.78;letter-spacing:-.035em}
 .homepage-intro .intro-question em{font-size:1em}
 
 /* Second homepage feature: photograph fully fills its panel with no empty colour bands. */
