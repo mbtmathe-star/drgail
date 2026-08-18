@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /login.html
+Disallow: /START-HERE.html
+Disallow: /api/
+
+Sitemap: https://www.drgail.co.za/sitemap.xml
